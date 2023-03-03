@@ -5,7 +5,7 @@ using System.Text;
 
 namespace kalkulator
 {
-    internal class kompleksni
+    class kompleksni
     {
         public double Re;
         public double Im;

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace kalkulator
 {
-    internal class kompleksni
+    class kompleksni
     {
         public double Re;
         public double Im;
@@ -37,7 +37,7 @@ namespace kalkulator
             double q = x.Re * (-y.Im) + x.Re * y.Re;
             double r = x.Re * x.Re - y.Im * y.Im;
             z.Re = p / r;
-            z.Im = q/r;
+            z.Im = q / r;
             return z;
         }
     }

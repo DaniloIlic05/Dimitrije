@@ -56,7 +56,7 @@ namespace kalkulator
             {
                 int n = rimski.ConvertToInt(textBox3.Text);
                 int m = rimski.ConvertToInt(textBox1.Text);
-                int s = m + n;
+                int s = n - m;
                 if (s <= 3999)
                 {
                     textBox2.Text = rimski.ConvertToString(n - m);
@@ -78,7 +78,7 @@ namespace kalkulator
             {
                 int n = rimski.ConvertToInt(textBox3.Text);
                 int m = rimski.ConvertToInt(textBox1.Text);
-                int s = m + n;
+                int s = n / m;
                 if (s <= 3999)
                 {
                     textBox2.Text = rimski.ConvertToString(n / m);

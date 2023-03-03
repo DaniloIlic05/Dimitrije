@@ -17,6 +17,7 @@ namespace kalkulator
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form2());
             rimski Rimski = new rimski();
+            kompleksni Kompleksni = new kompleksni();
         }
     }
 }

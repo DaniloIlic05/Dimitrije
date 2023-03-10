@@ -8,7 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 
 namespace kalkulator
-{   
+{
     public partial class FormKompleksniBrojevi : Form
     {
         public FormKompleksniBrojevi()
@@ -20,57 +20,50 @@ namespace kalkulator
         {
 
         }
-
         private void button1_Click(object sender, EventArgs e)
         {
             kompleksni x = new kompleksni();
             kompleksni y = new kompleksni();
-            string[] rezultat1 = textBox1.Text.Split(' ');
-            if (rezultat1[1] is null)
+            if (textBox1.Text == "")
             {
-                x.Re = Convert.ToDouble(rezultat1[0]);
-                x.Im = 0;
-            }
-            else if ((rezultat1[1] != "+") || (rezultat1[1] != "-"))
-            {
-                x.Im = Convert.ToDouble(rezultat1[0]);
                 x.Re = 0;
             }
-            if (rezultat1[1] == "+")
+            else
             {
-                x.Im = Convert.ToDouble(rezultat1[2]);
+                x.Re = Convert.ToDouble(textBox1.Text);
+            }
+            if (textBox2.Text == "")
+            {
+                x.Im = 0;
             }
             else
             {
-                x.Im = - Convert.ToDouble(rezultat1[2]);
+                x.Im = Convert.ToDouble(textBox2.Text);
             }
-            string[] rezultat2 = textBox2.Text.Split(' ');
-            if (rezultat2[1] is null)
+            if (textBox3.Text == "")
             {
-                y.Re = Convert.ToDouble(rezultat2[0]);
-                y.Im = 0;
-            }
-            else if ((rezultat2[1] != "+") || (rezultat2[1] != "-"))
-            {
-                y.Im = Convert.ToDouble(rezultat2[0]);
                 y.Re = 0;
             }
-            if (rezultat2[1] == "+")
+            else
             {
-                y.Im = Convert.ToDouble(rezultat2[2]);
+                y.Re = Convert.ToDouble(textBox3.Text);
+            }
+            if (textBox4.Text == "")
+            {
+                y.Im = 0;
             }
             else
             {
-                y.Im = -Convert.ToDouble(rezultat2[2]);
+                y.Im = Convert.ToDouble(textBox4.Text);
             }
             kompleksni z = kompleksni.zbir(x, y);
             if (z.Im > 0)
             {
-                textBox3.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
             }
             else
             {
-                textBox3.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
             }
         }
 
@@ -78,34 +71,46 @@ namespace kalkulator
         {
             kompleksni x = new kompleksni();
             kompleksni y = new kompleksni();
-            string[] rezultat1 = textBox1.Text.Split(' ');
-            x.Re = Convert.ToDouble(rezultat1[0]);
-            if (rezultat1[1] == "+")
+            if (textBox1.Text == "")
             {
-                x.Im = Convert.ToDouble(rezultat1[2]);
+                x.Re = 0;
             }
             else
             {
-                x.Im = -Convert.ToDouble(rezultat1[2]);
+                x.Re = Convert.ToDouble(textBox1.Text);
             }
-            string[] rezultat2 = textBox2.Text.Split(' ');
-            y.Re = Convert.ToDouble(rezultat2[0]);
-            if (rezultat2[1] == "+")
+            if (textBox2.Text == "")
             {
-                y.Im = Convert.ToDouble(rezultat2[2]);
+                x.Im = 0;
             }
             else
             {
-                y.Im = -Convert.ToDouble(rezultat2[2]);
+                x.Im = Convert.ToDouble(textBox2.Text);
+            }
+            if (textBox3.Text == "")
+            {
+                y.Re = 0;
+            }
+            else
+            {
+                y.Re = Convert.ToDouble(textBox3.Text);
+            }
+            if (textBox4.Text == "")
+            {
+                y.Im = 0;
+            }
+            else
+            {
+                y.Im = Convert.ToDouble(textBox4.Text);
             }
             kompleksni z = kompleksni.razlika(x, y);
             if (z.Im > 0)
             {
-                textBox3.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
             }
             else
             {
-                textBox3.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
             }
         }
 
@@ -113,34 +118,46 @@ namespace kalkulator
         {
             kompleksni x = new kompleksni();
             kompleksni y = new kompleksni();
-            string[] rezultat1 = textBox1.Text.Split(' ');
-            x.Re = Convert.ToDouble(rezultat1[0]);
-            if (rezultat1[1] == "+")
+            if (textBox1.Text == "")
             {
-                x.Im = Convert.ToDouble(rezultat1[2]);
+                x.Re = 0;
             }
             else
             {
-                x.Im = -Convert.ToDouble(rezultat1[2]);
+                x.Re = Convert.ToDouble(textBox1.Text);
             }
-            string[] rezultat2 = textBox2.Text.Split(' ');
-            y.Re = Convert.ToDouble(rezultat2[0]);
-            if (rezultat2[1] == "+")
+            if (textBox2.Text == "")
             {
-                y.Im = Convert.ToDouble(rezultat2[2]);
+                x.Im = 0;
             }
             else
             {
-                y.Im = -Convert.ToDouble(rezultat2[2]);
+                x.Im = Convert.ToDouble(textBox2.Text);
             }
-            kompleksni z = kompleksni.prozivod(x, y);
+            if (textBox3.Text == "")
+            {
+                y.Re = 0;
+            }
+            else
+            {
+                y.Re = Convert.ToDouble(textBox3.Text);
+            }
+            if (textBox4.Text == "")
+            {
+                y.Im = 0;
+            }
+            else
+            {
+                y.Im = Convert.ToDouble(textBox4.Text);
+            }
+            kompleksni z = kompleksni.proizvod(x, y);
             if (z.Im > 0)
             {
-                textBox3.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
             }
             else
             {
-                textBox3.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
             }
         }
 
@@ -148,34 +165,46 @@ namespace kalkulator
         {
             kompleksni x = new kompleksni();
             kompleksni y = new kompleksni();
-            string[] rezultat1 = textBox1.Text.Split(' ');
-            x.Re = Convert.ToDouble(rezultat1[0]);
-            if (rezultat1[1] == "+")
+            if (textBox1.Text == "")
             {
-                x.Im = Convert.ToDouble(rezultat1[2]);
+                x.Re = 0;
             }
             else
             {
-                x.Im = -Convert.ToDouble(rezultat1[2]);
+                x.Re = Convert.ToDouble(textBox1.Text);
             }
-            string[] rezultat2 = textBox2.Text.Split(' ');
-            y.Re = Convert.ToDouble(rezultat2[0]);
-            if (rezultat2[1] == "+")
+            if (textBox2.Text == "")
             {
-                y.Im = Convert.ToDouble(rezultat2[2]);
+                x.Im = 0;
             }
             else
             {
-                y.Im = -Convert.ToDouble(rezultat2[2]);
+                x.Im = Convert.ToDouble(textBox2.Text);
+            }
+            if (textBox3.Text == "")
+            {
+                y.Re = 0;
+            }
+            else
+            {
+                y.Re = Convert.ToDouble(textBox3.Text);
+            }
+            if (textBox4.Text == "")
+            {
+                y.Im = 0;
+            }
+            else
+            {
+                y.Im = Convert.ToDouble(textBox4.Text);
             }
             kompleksni z = kompleksni.kolicnik(x, y);
             if (z.Im > 0)
             {
-                textBox3.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
             }
             else
             {
-                textBox3.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
             }
         }
     }

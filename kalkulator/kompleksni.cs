@@ -23,7 +23,7 @@ namespace kalkulator
             z.Im = x.Im - y.Im;
             return z;
         }
-        static public kompleksni prozivod(kompleksni x, kompleksni y)
+        static public kompleksni proizvod(kompleksni x, kompleksni y)
         {
             kompleksni z = new kompleksni();
             z.Re = x.Re * y.Re - x.Im * y.Im;

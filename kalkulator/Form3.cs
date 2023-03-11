@@ -61,9 +61,17 @@ namespace kalkulator
             {
                 textBox5.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
             }
+            else if (z.Im == 0)
+            {
+                textBox5.Text = Convert.ToString(z.Re);
+            }
+            else if (z.Re == 0)
+            {
+                textBox5.Text = Convert.ToString(z.Im);
+            }
             else
             {
-                textBox5.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + Convert.ToString(z.Im) + " i";
             }
         }
 
@@ -108,9 +116,17 @@ namespace kalkulator
             {
                 textBox5.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
             }
+            else if (z.Im == 0)
+            {
+                textBox5.Text = Convert.ToString(z.Re);
+            }
+            else if (z.Re == 0)
+            {
+                textBox5.Text = Convert.ToString(z.Im);
+            }
             else
             {
-                textBox5.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + Convert.ToString(z.Im) + " i";
             }
         }
 
@@ -155,9 +171,17 @@ namespace kalkulator
             {
                 textBox5.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
             }
+            else if (z.Im == 0)
+            {
+                textBox5.Text = Convert.ToString(z.Re);
+            }
+            else if (z.Re == 0)
+            {
+                textBox5.Text = Convert.ToString(z.Im);
+            }
             else
             {
-                textBox5.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + Convert.ToString(z.Im) + " i";
             }
         }
 
@@ -202,10 +226,27 @@ namespace kalkulator
             {
                 textBox5.Text = Convert.ToString(z.Re) + " +" + Convert.ToString(z.Im) + " i";
             }
+            else if (z.Im == 0)
+            {
+                textBox5.Text = Convert.ToString(z.Re);
+            }
+            else if (z.Re == 0)
+            {
+                textBox5.Text = Convert.ToString(z.Im);
+            }
             else
             {
-                textBox5.Text = Convert.ToString(z.Re) + " -" + Convert.ToString(z.Im) + " i";
+                textBox5.Text = Convert.ToString(z.Re) + Convert.ToString(z.Im) + " i";
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
         }
     }
 }

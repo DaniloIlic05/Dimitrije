@@ -34,8 +34,8 @@ namespace kalkulator
         {
             kompleksni z = new kompleksni();
             double p = x.Re * y.Re + x.Im * y.Im;
-            double q = x.Re * (-y.Im) + x.Re * y.Re;
-            double r = x.Re * x.Re - y.Im * y.Im;
+            double q = x.Im * y.Re - x.Re * y.Im;
+            double r = y.Re * y.Re + y.Im * y.Im;
             z.Re = p / r;
             z.Im = q / r;
             return z;

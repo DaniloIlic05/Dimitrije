@@ -13,6 +13,7 @@ namespace kalkulator
     {
         FormRimski formRimski = new FormRimski();
         FormKompleksniBrojevi formKompleksni = new FormKompleksniBrojevi();
+        FormDugacki formDugacki = new FormDugacki();
         public Form2()
         {
             InitializeComponent();
@@ -31,6 +32,11 @@ namespace kalkulator
         private void label1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            formDugacki.ShowDialog();
         }
     }
 }

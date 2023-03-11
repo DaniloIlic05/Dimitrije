@@ -18,6 +18,7 @@ namespace kalkulator
             Application.Run(new Form2());
             rimski Rimski = new rimski();
             kompleksni Kompleksni = new kompleksni();
+            dugacki Dugacki = new dugacki();
         }
     }
 }

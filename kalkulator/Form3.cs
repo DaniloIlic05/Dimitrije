@@ -238,6 +238,11 @@ namespace kalkulator
             {
                 textBox5.Text = Convert.ToString(z.Re) + Convert.ToString(z.Im) + " i";
             }
+            if ((y.Re == 0) && (y.Im == 0))
+            {
+                MessageBox.Show("Deljenje sa nulom nije dozvoljeno.");
+                textBox5.Text = "";
+            }
         }
 
         private void button5_Click(object sender, EventArgs e)

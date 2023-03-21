@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Singulink.Numerics;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Numerics;
+using static Singulink.Numerics.BigDecimal;
 
 namespace kalkulator
 {
@@ -402,38 +403,12 @@ namespace kalkulator
 
             return sb.ToString();
         }
-        public static string Kolicnik(string s1, string s2, int brojDecimala)
+        public static string Kolicnik(string s1, string s2)
         {
-            try
-            {
-                int scale = brojDecimala;
-                BigInteger d1 = BigInteger.Parse(s1.Replace(".", ""));
-                BigInteger d2 = BigInteger.Parse(s2.Replace(".", ""));
-                BigInteger rez = BigInteger.Divide(d1, d2);
-                BigInteger ostatak = BigInteger.Remainder(d1, d2);
-                string rezString = rez.ToString();
-                string ostatakString = ostatak.ToString().PadLeft(scale, '0');
-                string tacka = ".";
-                if (scale > 0)
-                {
-                    rezString += tacka;
-                    for (int i = 0; i < scale; i++)
-                    {
-                        ostatak *= 10;
-                        BigInteger digit = BigInteger.Divide(ostatak, d2);
-                        rezString += digit.ToString();
-                        ostatak = BigInteger.Remainder(ostatak, d2);
-                    }
-                }
-                return rezString;
-            }
-            catch (System.DivideByZeroException)
-            {
-                MessageBox.Show("Nije dozvoljeno deljenje sa nulom.");
-                return string.Empty;
-            }
+            BigDecimal x = BigDecimal.Parse(s1);
+            BigDecimal y = BigDecimal.Parse(s2);
+            return BigDecimal.Divide(x, y, 20).ToString();
         }
-
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -447,7 +422,7 @@ namespace kalkulator
 
         private void button4_Click(object sender, EventArgs e)
         {
-            textBox3.Text = Kolicnik(textBox1.Text, textBox2.Text, 50);
+            textBox3.Text = Kolicnik(textBox1.Text, textBox2.Text);
         }
         private void button3_Click(object sender, EventArgs e)
         {
